@@ -35,14 +35,6 @@ if __name__ == '__main__':
 net = cv2.dnn.readNetFromCaffe('/home/pi/models/MobileNetSSD_deploy.prototxt',
         '/home/pi/models/MobileNetSSD_deploy.caffemodel')
 
-name: "MobileNet-SSD"
-input: "data"
-input_shape {
-  dim: 1
-  dim: 3
-  dim: 300
-  dim: 300
-}
 
 def detect(frame):
     frame = cv2.resize(frame, (300, 300))

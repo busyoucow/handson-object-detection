@@ -2,7 +2,6 @@ from flask import Flask, Response, render_template
 from imutils.video.pivideostream import PiVideoStream
 import cv2
 import time
-
 import numpy as np
 
 
@@ -72,4 +71,4 @@ def gen(camera):
         processed_frame = detect(frame.copy())
         ret, jpeg = cv2.imencode('.jpg', processed_frame)
         yield (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + jpeg.tobytes() + b'\r\n\r\n')
+             b'Content-Type: image/jpeg\r\n\r\n' + jpeg.tobytes() + b'\r\n\r\n')

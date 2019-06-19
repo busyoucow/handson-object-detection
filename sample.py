@@ -45,8 +45,8 @@ def detect(frame):
         mean=127.5
     )
 
-net.setInput(blob)
-out = net.forward()
+    net.setInput(blob)
+    out = net.forward()
 
     boxes = out[0,0,:,3:7] * np.array([300, 300, 300, 300])
     classes = out[0,0,:,1]
